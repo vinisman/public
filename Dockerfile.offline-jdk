@@ -5,7 +5,7 @@
 # Содержит: только базовый образ + установленные пакеты (без лейблов, пользователя и т.д.)
 #
 # Сборка под linux/amd64 и пуш в GHCR:
-#   docker build --platform linux/amd64 -f Dockerfile.offline -t ghcr.io/vinisman/java-jdk:21-v1 .
+#   docker build --platform linux/amd64 -f Dockerfile.offline-jdk -t ghcr.io/vinisman/java-jdk:21-v1 .
 #   docker push ghcr.io/vinisman/java-jdk:21-v1
 
 FROM bellsoft/liberica-runtime-container:jdk-21-glibc
