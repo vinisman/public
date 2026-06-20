@@ -4,19 +4,18 @@
 #
 # Содержит: только базовый образ + установленные пакеты (без лейблов, пользователя и т.д.)
 #
-# Сборка и пуш в GHCR:
-#   docker build -f Dockerfile.offline -t ghcr.io/vinisman/java-jdk:21-v1 .
+# Сборка под linux/amd64 и пуш в GHCR:
+#   docker build --platform linux/amd64 -f Dockerfile.offline -t ghcr.io/vinisman/java-jdk:21-v1 .
 #   docker push ghcr.io/vinisman/java-jdk:21-v1
 
 FROM bellsoft/liberica-runtime-container:jdk-21-glibc
 
 # Установка утилит из репозиториев Alpaquita Linux
-RUN apk update && apk --no-cache add \
+RUN apk --no-cache add \
     rsync \
     jq \
     iproute2 \
     bash \
     curl \
-    p7zip \
     fontconfig \
     ttf-dejavu
